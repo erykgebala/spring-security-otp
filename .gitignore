@@ -6,6 +6,7 @@ target/
 
 mvnw
 mvnw.cmd
+.mvn
 maven-wrapper.jar
 maven-wrapper.properties
 ### STS ###
