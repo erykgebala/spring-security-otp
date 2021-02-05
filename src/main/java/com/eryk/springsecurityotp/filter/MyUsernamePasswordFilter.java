@@ -45,7 +45,7 @@ public class MyUsernamePasswordFilter extends OncePerRequestFilter {
             OtpAuth authenticationToken = new OtpAuth(username, otp);
             authenticationManager.authenticate(authenticationToken);
             String token = UUID.randomUUID().toString();
-            tokenManager.addToken(  token);
+            tokenManager.addToken(token);
             resp.setHeader("Authorization", token);
         }
 
