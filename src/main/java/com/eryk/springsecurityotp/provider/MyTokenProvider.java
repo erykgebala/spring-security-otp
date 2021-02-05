@@ -21,7 +21,8 @@ public class MyTokenProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String token = authentication.getName();
 
-        if (tokenManager.checkToken(token)) {
+        String tokenAuth = token.split("Bearer ")[1];
+        if (tokenManager.checkToken(tokenAuth)) {
             return new TokenAuth(token, null, Arrays.asList(new SimpleGrantedAuthority("read")));
         }
 
